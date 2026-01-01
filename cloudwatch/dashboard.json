@@ -1,0 +1,74 @@
+{
+    "widgets": [
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 6,
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [ { "expression": "SELECT SUM(\"Invocations\")\nFROM SCHEMA(\"AWS/Lambda\", FunctionName)\nWHERE FunctionName = 'sample-log-app'", "label": "\"Invocations\"", "id": "q1" } ]
+                ],
+                "region": "us-east-1",
+                "stat": "Sum",
+                "period": 300
+            }
+        },
+        {
+            "type": "metric",
+            "x": 6,
+            "y": 0,
+            "width": 6,
+            "height": 6,
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [ { "expression": "SELECT SUM(\"Errors\")\nFROM SCHEMA(\"AWS/Lambda\", FunctionName)\nWHERE FunctionName = 'sample-log-app'", "label": "\"Errors\"", "id": "q1" } ]
+                ],
+                "region": "us-east-1",
+                "stat": "Sum",
+                "period": 300
+            }
+        },
+        {
+            "type": "metric",
+            "x": 12,
+            "y": 0,
+            "width": 6,
+            "height": 6,
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [ { "expression": "SELECT SUM(\"Invocations\")\nFROM SCHEMA(\"AWS/Lambda\", FunctionName)\nWHERE FunctionName = 'log-analyzer'", "label": "\"Invocations\"", "id": "q1" } ]
+                ],
+                "region": "us-east-1",
+                "stat": "Sum",
+                "period": 300
+            }
+        },
+        {
+            "type": "log",
+            "x": 0,
+            "y": 6,
+            "width": 24,
+            "height": 6,
+            "properties": {
+                "query": "SOURCE \"/aws/lambda/sample-log-app\" |\nfields @timestamp, @message\n| sort @timestamp desc\n| limit 10000",
+                "queryBy": "logGroupName",
+                "logGroupPrefixes": {
+                    "logClass": "STANDARD",
+                    "logGroupPrefix": [],
+                    "accountIds": []
+                },
+                "region": "us-east-1",
+                "stacked": false,
+                "view": "timeSeries"
+            }
+        }
+    ]
+}
