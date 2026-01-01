@@ -57,10 +57,46 @@ Architecture diagram and detailed explanation are available in the `architecture
 cloud-log-monitoring-alert-system/
 │
 ├── architecture/
+│   ├── architecture-diagram.png
+│   └── architecture-explanation.md
+│
 ├── cloudwatch/
+│   ├── dashboard-setup.md
+│   ├── dashboard.json
+│   └── subscription-filter.md
+│
 ├── lambda/
+│   ├── log-analyzer/
+│   │   └── log_analyzer.py
+│   │
+│   └── sample-log-app/
+│       └── sample_log_app.py
+│
 ├── screenshots/
+│   ├── 1-created-SNS-topic.png
+│   ├── 2-created-subscription.png
+│   ├── 3-subscription-email.png
+│   ├── 4-subscription-confirmed.png
+│   ├── 5-created-log-analyzer-function.png
+│   ├── 6-assigned-IAM-role-to-log-analyzer.png
+│   ├── 7-log-analyzer-deployed.png
+│   ├── 8-created-sample-log-app-function.png
+│   ├── 9-sample-log-app-deployed.png
+│   ├── 10-creating-test-event.png
+│   ├── 11-CloudWatch.png
+│   ├── 12-sample-log-app.png
+│   ├── 13-subscription-filter.png
+│   ├── 14-test1-WARNING.png
+│   ├── 15-test1-ERROR.png
+│   ├── 16-ALERT-email.png
+│   ├── 17-sample-log-app-invocations-widget.png
+│   ├── 18-log-analyzer-invocations-widget.png
+│   ├── 19-created-CloudWatch-Dashboard.png
+│   └── 20-Dashboard-JSON.png
+│
 ├── sns/
+│   └── sns-setup.md
+│
 └── README.md
 ```
 
