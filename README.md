@@ -75,24 +75,34 @@ Project Structure
 ```
 cloud-log-monitoring-alert-system/
 │
+├── README.md
 ├── architecture/
-│   └── architecture-diagram.png
-│
-├── sample-app/
-│   ├── app.py
-│   └── README.md
+│   ├── architecture-diagram.png        # Visual flow of the project
+│   └── architecture-explanation.md     # Explain architecture step by step
 │
 ├── lambda/
-│   └── log_analyzer.py
+│   ├── log-analyzer/
+│   │   └── log_analyzer.py            # Lambda code that detects ERROR logs
+│   └── sample-log-app/
+│       └── sample_log_app.py          # Lambda code that generates random logs
 │
 ├── cloudwatch/
-│   └── dashboard.json
+│   ├── subscription-filter.md         # Explain the filter pattern setup
+│   └── dashboard.json (optional)      # Exported dashboard config if used
 │
-├── alerts/
-│   └── sns-setup.md
+├── sns/
+│   └── sns-setup.md                   # Explain SNS topic and email subscription
 │
-├── README.md
-└── .gitignore
+├── screenshots/
+│   ├── 01_sns_topic.png
+│   ├── 02_email_confirm.png
+│   ├── 03_log-analyzer-code.png
+│   ├── 04_sample-log-app-code.png
+│   ├── 05_subscription-filter.png
+│   └── 06_email-received.png          # All AWS console screenshots in order
+│
+└── .gitignore                         # Ignore temp files, IDE configs, etc.
+
 ```
 How It Works
 ```
