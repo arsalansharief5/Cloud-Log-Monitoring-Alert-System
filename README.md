@@ -97,6 +97,7 @@ cloud-log-monitoring-alert-system/
 ├── sns/
 │   └── sns-setup.md
 │
+├── LICENSE
 └── README.md
 ```
 
